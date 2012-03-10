@@ -1579,7 +1579,14 @@ table .span12 {
 .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
     color: #ffffff;
     text-decoration: none;
-    background-color: #0088cc;
+    background: rgb(173,173,173); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(173,173,173,1) 1%, rgba(150,150,150,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(173,173,173,1)), color-stop(100%,rgba(150,150,150,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(173,173,173,1) 1%,rgba(150,150,150,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(173,173,173,1) 1%,rgba(150,150,150,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(173,173,173,1) 1%,rgba(150,150,150,1) 100%); /* IE10+ */
+    background: linear-gradient(top,  rgba(173,173,173,1) 1%,rgba(150,150,150,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#adadad', endColorstr='#969696',GradientType=0 ); /* IE6-9 */
 }
 .dropdown.open {
     *z-index: 1000;

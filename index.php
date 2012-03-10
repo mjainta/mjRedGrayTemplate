@@ -143,6 +143,26 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
                             <div class="container">
                                 <jdoc:include type="modules" name="navbar" style="none" />
                             </div>
+                            <script type="text/javascript">
+                                // Setting the necessary classes to enable a nice dropdown menu for the navbar
+                                // Make sure the root element <ul> of the navbar has the id "navbar-menu"
+                                $('#navbar-menu').children().each(function(){
+                                    var classAttr = this.getAttribute('class');
+
+                                    // If an element has the class "deeper" it is marked by jommla it has submenus
+                                    if($(this).hasClass('deeper'))
+                                    {
+                                        // The submenu <li> needs the class "dropdown"
+                                        $(this).addClass('dropdown');
+                                        // The <a> of the submenu needs "dropdown-toggle" and a new attribute "data-toggle"
+                                        $(this).children('a').addClass('dropdown-toggle');
+                                        $(this).children('a').attr('data-toggle', 'dropdown');
+                                        $(this).children('a').append('<b class="caret"></b>');
+                                        // The children <ul> of the submenu get the class "dropdown-menu"
+                                        $(this).children('ul').addClass('dropdown-menu');
+                                    }
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
