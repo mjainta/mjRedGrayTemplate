@@ -19,13 +19,6 @@
     </files>
     <positions>
         <position>navbar</position>
-        <position>contentLeft3ColumnSidebar</position>
-        <position>contentMid3ColumnSidebar</position>
-        <position>contentRight3ColumnSidebar</position>
-        <position>sidebarRight3ColumnSidebar</position>
-        <position>content1Column</position>
-        <position>contentLeft2Column</position>
-        <position>contentRight2Column</position>
     </positions>
     <config>
         <fields name="params">
@@ -59,6 +52,22 @@
                 <field name="slideshowImg6" type="media" default="" label="Slideshow Image 6" description="Choose Image" />
                 <field name="slideshowDescriptionTitle6" type="text" label="Slideshow Image 6 Title" description="Use a title for the Image (optional)." />
                 <field name="slideshowDescription6" type="text" label="Slideshow Image 6 Description" description="Use a description (optional)." />
+                
+                <field name="slideshowImg7" type="media" default="" label="Slideshow Image 7" description="Choose Image" />
+                <field name="slideshowDescriptionTitle7" type="text" label="Slideshow Image 7 Title" description="Use a title for the Image (optional)." />
+                <field name="slideshowDescription7" type="text" label="Slideshow Image 7 Description" description="Use a description (optional)." />
+                
+                <field name="slideshowImg8" type="media" default="" label="Slideshow Image 8" description="Choose Image" />
+                <field name="slideshowDescriptionTitle8" type="text" label="Slideshow Image 8 Title" description="Use a title for the Image (optional)." />
+                <field name="slideshowDescription8" type="text" label="Slideshow Image 8 Description" description="Use a description (optional)." />
+                
+                <field name="slideshowImg9" type="media" default="" label="Slideshow Image 9" description="Choose Image" />
+                <field name="slideshowDescriptionTitle9" type="text" label="Slideshow Image 9 Title" description="Use a title for the Image (optional)." />
+                <field name="slideshowDescription9" type="text" label="Slideshow Image 9 Description" description="Use a description (optional)." />
+                
+                <field name="slideshowImg10" type="media" default="" label="Slideshow Image 10" description="Choose Image" />
+                <field name="slideshowDescriptionTitle10" type="text" label="Slideshow Image 10 Title" description="Use a title for the Image (optional)." />
+                <field name="slideshowDescription10" type="text" label="Slideshow Image 10 Description" description="Use a description (optional)." />
             </fieldset>
         </fields>
     </config>
