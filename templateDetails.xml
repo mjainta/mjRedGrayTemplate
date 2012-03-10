@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="template">
+    <name>mjRedGrayTemplate</name>
+    <creationDate>2012-03-03</creationDate>
+    <author>Martin Jainta</author>
+    <authorEmail>martin.jainta@googlemail.com</authorEmail>
+    <authorUrl>http://www.mjainta.de</authorUrl>
+    <copyright>Martin Jainta 2012</copyright>
+    <license>GNU/GPL</license>
+    <version>1.0.0</version>
+    <description>A Template using Bootstrap CSS Framework with red/gray theme colors.</description>
+    <files>
+        <filename>index.php</filename>
+        <filename>templateDetails.xml</filename>
+        <filename>favicon.ico</filename>
+        <folder>img</folder>
+        <folder>css</folder>
+        <folder>js</folder>
+    </files>
+    <positions>
+        <position>navbar</position>
+        <position>contentLeft3ColumnSidebar</position>
+        <position>contentMid3ColumnSidebar</position>
+        <position>contentRight3ColumnSidebar</position>
+        <position>sidebarRight3ColumnSidebar</position>
+        <position>content1Column</position>
+        <position>contentLeft2Column</position>
+        <position>contentRight2Column</position>
+    </positions>
+    <config>
+        <fields name="params">
+            <fieldset name="basics">
+                <legend>General Option</legend>
+                <field name="footerText" type="textarea" default="Text for the Footer." label="Footertext" description="This Text is displayed in the Footer after the Copyright comment and its Sitename." rows="8" cols="25" />
+                <field name="bannerImage" type="media" label="Banner Image" description="The image for the site banner." />
+            </fieldset>
+            <fieldset name="slideshow" value="Slideshow Options">
+                <legend>Slideshow Options</legend>
+                <field name="slideshowImg1" type="media" default="" label="Slideshow Image 1" description="Choose Image (Width 1170px preferred)" />
+                <field name="slideshowDescriptionTitle1" type="text" label="Slideshow Image 1 Title" description="Use a title for the Image (optional)." />
+                <field name="slideshowDescription1" type="text" label="Slideshow Image 1 Description" description="Use a description (optional)." />
+                
+                <field name="slideshowImg2" type="media" default="" label="Slideshow Image 2" description="Choose Image (Width 1170px preferred)" />
+                <field name="slideshowDescriptionTitle2" type="text" label="Slideshow Image 2 Title" description="Use a title for the Image (optional)." />
+                <field name="slideshowDescription2" type="text" label="Slideshow Image 2 Description" description="Use a description (optional)." />
+                
+                <field name="slideshowImg3" type="media" default="" label="Slideshow Image 3" description="Choose Image (Width 1170px preferred)" />
+                <field name="slideshowDescriptionTitle3" type="text" label="Slideshow Image 3 Title" description="Use a title for the Image (optional)." />
+                <field name="slideshowDescription3" type="text" label="Slideshow Image 3 Description" description="Use a description (optional)." />
+                
+                <field name="slideshowImg4" type="media" default="" label="Slideshow Image 4" description="Choose Image (Width 1170px preferred)" />
+                <field name="slideshowDescriptionTitle4" type="text" label="Slideshow Image 4 Title" description="Use a title for the Image (optional)." />
+                <field name="slideshowDescription4" type="text" label="Slideshow Image 4 Description" description="Use a description (optional)." />
+                
+                <field name="slideshowImg5" type="media" default="" label="Slideshow Image 5" description="Choose Image (Width 1170px preferred)" />
+                <field name="slideshowDescriptionTitle5" type="text" label="Slideshow Image 5 Title" description="Use a title for the Image (optional)." />
+                <field name="slideshowDescription5" type="text" label="Slideshow Image 5 Description" description="Use a description (optional)." />
+                
+                <field name="slideshowImg6" type="media" default="" label="Slideshow Image 6" description="Choose Image" />
+                <field name="slideshowDescriptionTitle6" type="text" label="Slideshow Image 6 Title" description="Use a title for the Image (optional)." />
+                <field name="slideshowDescription6" type="text" label="Slideshow Image 6 Description" description="Use a description (optional)." />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
