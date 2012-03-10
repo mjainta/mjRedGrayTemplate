@@ -170,7 +170,7 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
         </section>
         <section class="content">
             <div class="row">
-                <div class="span12">
+                <div class="span10 offset1">
                     <jdoc:include type="message" />
                     <jdoc:include type="component" />
                 </div>
