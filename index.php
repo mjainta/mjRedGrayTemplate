@@ -49,7 +49,8 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
 <link rel="stylesheet" href="<?= $this->baseurl ?>/templates/<?= $this->template ?>/css/bootstrap-responsive.css" type="text/css" />
 <link rel="stylesheet" href="<?= $this->baseurl ?>/templates/<?= $this->template ?>/css/template.css" type="text/css" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" ></script>
-<script type="text/javascript" src="<?= $this->baseurl ?>/templates/<?= $this->template ?>/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+<script type="text/javascript" src="<?= $this->baseurl ?>/templates/<?= $this->template ?>/js/bootstrap.js" ></script>
 </head>
 <body>
     <div class="container">
@@ -75,6 +76,15 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
             <section class="slideshow">
                 <div class="row">  
                     <div class="span12">
+					<?php if ($this->countModules( 'headerShow' ))
+					{
+						?>
+						<jdoc:include type="modules" name="headerShow" />
+						<?php
+					}
+					else
+					{
+					?>
                         <div id="slideshowCarousel" class="carousel slide">
                             <div class="carousel-inner">
                                 <?php
@@ -122,16 +132,19 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
                             <a class="carousel-control left" href="#slideshowCarousel" data-slide="prev">&lsaquo;</a>
                             <a class="carousel-control right" href="#slideshowCarousel" data-slide="next">&rsaquo;</a>
                         </div>
+						<script type="text/javascript" >
+							$('#slideshowCarousel').carousel({
+								interval:4000
+							});
+
+							$('#slideshowCarousel').carousel('next');
+						</script>
+						<?php
+					}
+					?>
                     </div>
                 </div>
             </section>
-            <script type="text/javascript" >
-                $('#slideshowCarousel').carousel({
-                    interval:4000
-                });
-
-                $('#slideshowCarousel').carousel('next');
-            </script>
         <?php
         }
         ?>
