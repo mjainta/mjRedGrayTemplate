@@ -48,6 +48,7 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
 <link rel="stylesheet" href="<?= $this->baseurl ?>/templates/<?= $this->template ?>/css/bootstrap.css" type="text/css" />
 <link rel="stylesheet" href="<?= $this->baseurl ?>/templates/<?= $this->template ?>/css/bootstrap-responsive.css" type="text/css" />
 <link rel="stylesheet" href="<?= $this->baseurl ?>/templates/<?= $this->template ?>/css/template.css" type="text/css" />
+<link rel="stylesheet" href="<?= $this->baseurl ?>/templates/<?= $this->template ?>/css/stylesheet.css" type="text/css" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" ></script>
 <script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
 <script type="text/javascript" src="<?= $this->baseurl ?>/templates/<?= $this->template ?>/js/bootstrap.js" ></script>
