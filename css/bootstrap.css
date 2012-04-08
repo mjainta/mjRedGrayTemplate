@@ -98,8 +98,8 @@ textarea {
 body {
     margin: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 19px;
     color: #333333;
     background-color: #ffffff;
 }
@@ -278,8 +278,8 @@ a:hover {
 p {
     margin: 0 0 9px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 19px;
 }
 p small {
     font-size: 11px;
@@ -350,7 +350,7 @@ h6 {
     text-transform: uppercase;
 }
 .page-header {
-    padding-bottom: 17px;
+    padding-bottom: 3px;
     margin: 18px 0;
     border-bottom: 1px solid #eeeeee;
 }
@@ -523,9 +523,9 @@ button,
 select,
 textarea {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
-    line-height: 18px;
+    line-height: 19px;
 }
 label {
     margin-bottom: 5px;
@@ -540,8 +540,8 @@ select,
     height: 18px;
     padding: 4px;
     margin-bottom: 9px;
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 19px;
     color: #555555;
     border: 1px solid #ccc;
     -webkit-border-radius: 3px;
@@ -1666,8 +1666,8 @@ table .span12 {
 .btn {
     display: inline-block;
     padding: 4px 10px 4px;
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 19px;
     color: #333333;
     text-align: center;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
@@ -2083,6 +2083,7 @@ button.btn.small, input[type="submit"].btn.small {
     margin-top: 5px;
 }
 .nav {
+    font-size: 13px;
     margin-left: 0;
     margin-bottom: 18px;
     list-style: none;
