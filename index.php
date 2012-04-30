@@ -21,10 +21,14 @@ $slideshowImgParams[3] = $this->params->get('slideshowImg3');
 $slideshowImgParams[4] = $this->params->get('slideshowImg4');
 $slideshowImgParams[5] = $this->params->get('slideshowImg5');
 $slideshowImgParams[6] = $this->params->get('slideshowImg6');
-
+$slideshowImgParams[7] = $this->params->get('slideshowImg7');
+$slideshowImgParams[8] = $this->params->get('slideshowImg8');
+$slideshowImgParams[9] = $this->params->get('slideshowImg9');
+$slideshowImgParams[10] = $this->params->get('slideshowImg10');
+  
 $slideshowImages = array();
 
-for ($i = 1; $i <= count($slideshowImgParams); $i++) 
+for ($i = 1; $i <= count($slideshowImgParams); $i++)
 {
     // For each Image the description and title are get
     $imgBasePath = $this->baseurl . $slideshowImgParams[$i];
@@ -43,7 +47,7 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
 }
 ?>
 <!DOCTYPE html>  
-<head> 
+<head>
 <jdoc:include type="head" />
 <link rel="stylesheet" href="<?= $this->baseurl ?>/templates/<?= $this->template ?>/css/bootstrap.css" type="text/css" />
 <link rel="stylesheet" href="<?= $this->baseurl ?>/templates/<?= $this->template ?>/css/bootstrap-responsive.css" type="text/css" />
@@ -71,25 +75,25 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
             </div>
         </section>
         <?php
-        if (count($slideshowImages) > 0) 
+        if (count($slideshowImages) > 0)
         {
             ?>
             <section class="slideshow">
                 <div class="row">  
                     <div class="span12">
-					<?php if ($this->countModules( 'headerShow' ))
-					{
-						?>
-						<jdoc:include type="modules" name="headerShow" />
-						<?php
-					}
-					else
-					{
-					?>
+          <?php if ($this->countModules( 'headerShow' ))
+          {
+            ?>
+            <jdoc:include type="modules" name="headerShow" />
+            <?php
+          }
+          else
+          {
+          ?>
                         <div id="slideshowCarousel" class="carousel slide">
                             <div class="carousel-inner">
                                 <?php
-                                foreach ($slideshowImages as $slideshowImage) 
+                                foreach ($slideshowImages as $slideshowImage)
                                 {
                                     ?>
                                     <div class="item" align="center">
@@ -133,16 +137,16 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
                             <a class="carousel-control left" href="#slideshowCarousel" data-slide="prev">&lsaquo;</a>
                             <a class="carousel-control right" href="#slideshowCarousel" data-slide="next">&rsaquo;</a>
                         </div>
-						<script type="text/javascript" >
-							$('#slideshowCarousel').carousel({
-								interval:4000
-							});
+            <script type="text/javascript" >
+              $('#slideshowCarousel').carousel({
+                interval:4000
+              });
 
-							$('#slideshowCarousel').carousel('next');
-						</script>
-						<?php
-					}
-					?>
+              $('#slideshowCarousel').carousel('next');
+            </script>
+            <?php
+          }
+          ?>
                     </div>
                 </div>
             </section>
@@ -195,7 +199,6 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
                 <div class="span10 offset1 footerMargin" >
                     <footer>
                         <p>&copy; 2011 - <?= date('Y') ?> <?= $app->getCfg('sitename') ?></p>
-                        <p><pre class="footerText" ><?= $footerText ?></pre></p>
                     </footer>
                 </div>
             </div>
