@@ -9,7 +9,7 @@ $app = JFactory::getApplication();
 
 // The text displayed after the copyright and site of the name inside the footer.
 $footerText = $this->params->get('footerText');
-$bannerImg = $this->params->get('bannerImage');
+$bannerImg = '/'.$this->params->get('bannerImage');
 $slideshowWidth = $this->params->get('slideshowWidth');
 $slideshowHeight= $this->params->get('slideshowHeight');
 
@@ -30,19 +30,19 @@ $slideshowImages = array();
 
 for ($i = 1; $i <= count($slideshowImgParams); $i++)
 {
-    // For each Image the description and title are get
-    $imgBasePath = $this->baseurl . $slideshowImgParams[$i];
-    $imgDescriptionTitle = $this->params->get('slideshowDescriptionTitle'.$i);
-    $imgDescription = $this->params->get('slideshowDescription'.$i);
-    
-    // If a valid filepath was specified the image will be added to another array containing the images to display.
-    if (is_file($imgBasePath)) {
-        $slideshowImage = array();
-        $slideshowImage['imgPath'] = $imgBasePath;
-        $slideshowImage['description'] = $imgDescription;
-        $slideshowImage['descriptionTitle'] = $imgDescriptionTitle;
-        
-        $slideshowImages[] = $slideshowImage;
+	if($slideshowImgParams[$i] != null)
+	{
+		// For each Image the description and title are get
+		$imgBasePath = $this->baseurl.'/'.$slideshowImgParams[$i];
+		$imgDescriptionTitle = $this->params->get('slideshowDescriptionTitle'.$i);
+		$imgDescription = $this->params->get('slideshowDescription'.$i);
+
+		$slideshowImage = array();
+		$slideshowImage['imgPath'] = $imgBasePath;
+		$slideshowImage['description'] = $imgDescription;
+		$slideshowImage['descriptionTitle'] = $imgDescriptionTitle;
+
+		$slideshowImages[] = $slideshowImage;
     }
 }
 ?>
@@ -53,9 +53,11 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
 <link rel="stylesheet" href="<?= $this->baseurl ?>/templates/<?= $this->template ?>/css/bootstrap-responsive.css" type="text/css" />
 <link rel="stylesheet" href="<?= $this->baseurl ?>/templates/<?= $this->template ?>/css/template.css" type="text/css" />
 <link rel="stylesheet" href="<?= $this->baseurl ?>/templates/<?= $this->template ?>/css/stylesheet.css" type="text/css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" ></script>
-<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
-<script type="text/javascript" src="<?= $this->baseurl ?>/templates/<?= $this->template ?>/js/bootstrap.js" ></script>
+<script type="text/javascript" src="<?= $this->baseurl ?>/templates/<?= $this->template ?>/js/mootools.js" ></script>
+<script type="text/javascript" src="<?= $this->baseurl ?>/templates/<?= $this->template ?>/js/plugins/Loop.js" ></script>
+<script type="text/javascript" src="<?= $this->baseurl ?>/templates/<?= $this->template ?>/js/plugins/SlideShow.js" ></script>
+<script type="text/javascript" src="<?= $this->baseurl ?>/templates/<?= $this->template ?>/js/plugins/SlideShow.CSS.js" ></script>
+<script type="text/javascript" src="<?= $this->baseurl ?>/templates/<?= $this->template ?>/js/plugins/modernizr.js" ></script>
 </head>
 <body>
     <div class="container">
@@ -77,6 +79,7 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
         <?php
         if (count($slideshowImages) > 0)
         {
+			$useSlideshow = true;
             ?>
             <section class="slideshow">
                 <div class="row">  
@@ -90,60 +93,22 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
           else
           {
           ?>
-                        <div id="slideshowCarousel" class="carousel slide">
-                            <div class="carousel-inner">
-                                <?php
-                                foreach ($slideshowImages as $slideshowImage)
-                                {
-                                    ?>
-                                    <div class="item" align="center">
-                                        <img src="<?= $slideshowImage['imgPath'] ?>" alt>
-                                    <?php
-                                    $description = $slideshowImage['description'];
-                                    $descriptionTitle = $slideshowImage['descriptionTitle'];
-                                    $isDescription = !empty($description);
-                                    $isDescriptionTitle = !empty($descriptionTitle);
-                                    
-                                    if($isDescription || $isDescriptionTitle)
-                                    {
-                                        // If a description or a title is present display a carousel-caption.
-                                        ?>
-                                        <div class="carousel-caption">
-                                            <?php
-                                            if($isDescriptionTitle)
-                                            {
-                                                // If a title is present display it.
-                                                ?>
-                                                <h4><?= $descriptionTitle ?></h4>
-                                                <?php
-                                            }
-                                            if($isDescription)
-                                            {
-                                                // If a description is present display it.
-                                                ?>
-                                                <p><?= $description ?></p>
-                                                <?php
-                                            }
-                                            ?>
-                                        </div>
-                                        <?php
-                                    }
-                                    ?>
-                                    </div>
-                                    <?php
-                                }
-                                ?>
-                            </div>
-                            <a class="carousel-control left" href="#slideshowCarousel" data-slide="prev">&lsaquo;</a>
-                            <a class="carousel-control right" href="#slideshowCarousel" data-slide="next">&rsaquo;</a>
-                        </div>
-            <script type="text/javascript" >
-              $('#slideshowCarousel').carousel({
-                interval:4000
-              });
-
-              $('#slideshowCarousel').carousel('next');
-            </script>
+			<div id="slideshowCarousel" >
+				<div>
+				<div id="slideshow">
+					<?php
+					foreach ($slideshowImages as $slideshowImage)
+					{
+						?>
+							<img src="<?= $slideshowImage['imgPath'] ?>" alt>
+						<?php
+					}
+					?>
+					<span class="carousel-control left" >&lsaquo;</span>
+					<span class="carousel-control right" >&rsaquo;</span>
+				</div>
+				</div>
+			</div>
             <?php
           }
           ?>
@@ -161,26 +126,6 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
                             <div class="container">
                                 <jdoc:include type="modules" name="navbar" style="none" />
                             </div>
-                            <script type="text/javascript">
-                                // Setting the necessary classes to enable a nice dropdown menu for the navbar
-                                // Make sure the root element <ul> of the navbar has the id "navbar-menu"
-                                $('#navbar-menu').children().each(function(){
-                                    var classAttr = this.getAttribute('class');
-
-                                    // If an element has the class "deeper" it is marked by jommla it has submenus
-                                    if($(this).hasClass('deeper'))
-                                    {
-                                        // The submenu <li> needs the class "dropdown"
-                                        $(this).addClass('dropdown');
-                                        // The <a> of the submenu needs "dropdown-toggle" and a new attribute "data-toggle"
-                                        $(this).children('a').addClass('dropdown-toggle');
-                                        $(this).children('a').attr('data-toggle', 'dropdown');
-                                        $(this).children('a').append('<b class="caret"></b>');
-                                        // The children <ul> of the submenu get the class "dropdown-menu"
-                                        $(this).children('ul').addClass('dropdown-menu');
-                                    }
-                                });
-                            </script>
                         </div>
                     </div>
                 </div>
@@ -204,6 +149,12 @@ for ($i = 1; $i <= count($slideshowImgParams); $i++)
             </div>
         </section>
     </div>
-    <script type="text/javascript" src="<?= $this->baseurl ?>/templates/<?= $this->template ?>/js/template.js" ></script>
+	<script type="text/javascript">
+		/**
+		 * @type {Boolean} Says wheter the slideshow should be used.
+		 */
+		var useSlideshow = '<?=isset($useSlideshow) ? $useSlideshow : ''?>';
+	</script>
+    <script type="text/javascript" src="<?= $this->baseurl ?>/templates/<?= $this->template ?>/js/template.js?slide=yes" ></script>
 </body>
 </html>

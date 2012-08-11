@@ -7,7 +7,7 @@
     <authorUrl>http://www.mjainta.de</authorUrl>
     <copyright>Martin Jainta 2012</copyright>
     <license>GNU/GPL</license>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <description>A Template for Joomla! using Bootstrap CSS Framework with red/gray theme colors.</description>
     <files>
         <filename>index.php</filename>
